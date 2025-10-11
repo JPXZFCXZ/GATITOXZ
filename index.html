@@ -32,7 +32,6 @@
             overflow-x: hidden;
         }
 
-        /* NAVEGACIÓN */
         nav {
             position: fixed;
             top: 0;
@@ -63,6 +62,7 @@
             display: flex;
             gap: 40px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -94,22 +94,99 @@
             width: 100%;
         }
 
-        /* HERO SECTION */
-        .hero {
+        section {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-pre-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--verde-bosque);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            color: var(--negro-profundo);
+        }
+
+        .section-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            color: var(--gris-medio);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* CONTACTO EN HERO */
+        .hero-contacto {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 140px 40px 80px;
             background: linear-gradient(180deg, #ffffff 0%, var(--blanco-puro) 100%);
-            position: relative;
+        }
+
+        .social-icons-top {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .social-icon-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            border: 2px solid transparent;
+        }
+
+        .social-icon-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .social-icon-link.whatsapp {
+            background: #25D366;
+        }
+
+        .social-icon-link.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-icon-link.facebook {
+            background: #1877F2;
+        }
+
+        .social-icon-link img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
         }
 
         .hero-content {
             max-width: 900px;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-pre-title {
@@ -122,7 +199,7 @@
             font-weight: 600;
         }
 
-        .hero h1 {
+        .hero-content h1 {
             font-family: 'Archivo Black', sans-serif;
             font-size: 5rem;
             margin-bottom: 30px;
@@ -147,6 +224,18 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1.7;
+        }
+
+        .location-badge {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            border: 1px solid var(--gris-claro);
+            border-radius: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gris-medio);
+            margin-top: 40px;
         }
 
         .cta-buttons {
@@ -190,103 +279,18 @@
             color: white;
         }
 
-        /* SECCIONES */
-        section {
-            padding: 120px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-pre-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--verde-bosque);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .section-title {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-            color: var(--negro-profundo);
-        }
-
-        .section-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.15rem;
-            color: var(--gris-medio);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        /* HISTORIA */
-        .historia {
+        /* MISIÓN */
+        .mision {
             background: white;
         }
 
-        .historia-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .historia-texto {
-            font-size: 1.05rem;
-            line-height: 1.9;
+        .mision-intro {
+            max-width: 800px;
+            margin: 0 auto 70px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: var(--gris-medio);
-        }
-
-        .historia-texto p {
-            margin-bottom: 25px;
-        }
-
-        .historia-highlight {
-            color: var(--verde-bosque);
-            font-weight: 600;
-        }
-
-        .historia-visual {
-            background: var(--blanco-puro);
-            padding: 60px;
-            border-radius: 8px;
-            border: 1px solid var(--gris-claro);
-        }
-
-        .marca-chain {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 30px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .arrow {
-            color: var(--verde-suave);
-            font-size: 2rem;
-        }
-
-        .marca-item {
-            color: var(--negro-profundo);
-        }
-
-        /* MISIÓN */
-        .mision {
-            background: var(--blanco-puro);
         }
 
         .mision-cards {
@@ -297,7 +301,7 @@
         }
 
         .card {
-            background: white;
+            background: var(--blanco-puro);
             padding: 50px 40px;
             border-radius: 8px;
             border: 1px solid var(--gris-claro);
@@ -331,20 +335,147 @@
             line-height: 1.7;
         }
 
-        /* ESTADÍSTICAS */
-        .stats {
+        /* PROCESO */
+        .proceso {
+            background: var(--blanco-puro);
+        }
+
+        .proceso-timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .proceso-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gris-claro);
+            transform: translateX(-50%);
+        }
+
+        .proceso-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .proceso-step:nth-child(even) .step-content {
+            order: 2;
+        }
+
+        .proceso-step:nth-child(even) .step-visual {
+            order: 1;
+        }
+
+        .step-content {
+            text-align: right;
+            padding-right: 60px;
+        }
+
+        .proceso-step:nth-child(even) .step-content {
+            text-align: left;
+            padding-right: 0;
+            padding-left: 60px;
+        }
+
+        .step-number {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.2rem;
+            color: var(--verde-bosque);
+            margin-bottom: 15px;
+        }
+
+        .step-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--negro-profundo);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .step-description {
+            color: var(--gris-medio);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .step-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--verde-bosque);
+            border: 4px solid var(--blanco-puro);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        /* IMPACTO */
+        .impacto {
             background: var(--verde-bosque);
             color: white;
         }
 
-        .stats .section-pre-title,
-        .stats .section-title,
-        .stats .section-subtitle {
+        .impacto .section-pre-title,
+        .impacto .section-title,
+        .impacto .section-subtitle {
             color: white;
         }
 
-        .stats .section-subtitle {
+        .impacto .section-subtitle {
             opacity: 0.8;
+        }
+
+        .impacto-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .impacto-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .impacto-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .impacto-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .impacto-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .impacto-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* ESTADÍSTICAS */
+        .stats {
+            background: white;
         }
 
         .stats-grid {
@@ -357,227 +488,71 @@
         .stat-item {
             text-align: center;
             padding: 40px 20px;
+            background: var(--blanco-puro);
+            border-radius: 8px;
+            border: 1px solid var(--gris-claro);
+            transition: all 0.4s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--verde-bosque);
+            box-shadow: 0 15px 35px rgba(45, 93, 79, 0.1);
         }
 
         .stat-number {
             font-family: 'Archivo Black', sans-serif;
             font-size: 4.5rem;
-            color: white;
+            color: var(--verde-bosque);
             line-height: 1;
             margin-bottom: 15px;
         }
 
         .stat-label {
             font-family: 'Space Grotesk', sans-serif;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--gris-medio);
             font-size: 1rem;
             font-weight: 500;
         }
 
-        /* GALERÍA */
-        .galeria {
-            background: white;
-        }
-
-        .galeria-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .galeria-item {
-            aspect-ratio: 1;
-            background: var(--gris-claro);
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .galeria-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .galeria-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 15px;
-            background: linear-gradient(135deg, var(--gris-claro) 0%, #d0d0d0 100%);
-        }
-
-        .placeholder-icon {
-            width: 60px;
-            height: 60px;
-            border: 3px solid var(--verde-bosque);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: var(--verde-bosque);
-        }
-
-        .placeholder-text {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--gris-medio);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* CÓMO AYUDAR */
-        .ayudar {
+        /* VALORES */
+        .valores {
             background: var(--blanco-puro);
         }
 
-        .ayudar-grid {
+        .valores-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 40px;
             margin-top: 60px;
         }
 
-        .ayudar-card {
+        .valor-card {
             background: white;
-            padding: 60px 50px;
+            padding: 50px;
             border-radius: 8px;
             border: 1px solid var(--gris-claro);
             transition: all 0.4s ease;
-            text-align: center;
         }
 
-        .ayudar-card:hover {
+        .valor-card:hover {
             border-color: var(--terracota-suave);
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(212, 165, 116, 0.15);
+            box-shadow: 0 15px 35px rgba(212, 165, 116, 0.1);
         }
 
-        .ayudar-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 30px;
-            border: 2px solid var(--verde-bosque);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: var(--verde-bosque);
-            transition: all 0.3s ease;
-        }
-
-        .ayudar-card:hover .ayudar-icon {
-            background: var(--verde-bosque);
-            color: white;
-        }
-
-        .ayudar-card h3 {
+        .valor-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.8rem;
+            color: var(--negro-profundo);
             margin-bottom: 20px;
-            color: var(--negro-profundo);
             font-weight: 600;
         }
 
-        .ayudar-card p {
+        .valor-description {
             color: var(--gris-medio);
-            margin-bottom: 35px;
+            line-height: 1.8;
             font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        /* CONTACTO */
-        .contacto {
-            background: white;
-            text-align: center;
-        }
-
-        .contacto-info {
-            max-width: 800px;
-            margin: 60px auto 0;
-        }
-
-        .contacto-location {
-            font-size: 1.1rem;
-            color: var(--gris-medio);
-            margin-bottom: 60px;
-            font-weight: 500;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            padding: 40px;
-            background: var(--blanco-puro);
-            border: 1px solid var(--gris-claro);
-            border-radius: 8px;
-            min-width: 200px;
-            transition: all 0.4s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-5px);
-            border-color: var(--verde-bosque);
-            box-shadow: 0 15px 35px rgba(45, 93, 79, 0.1);
-        }
-
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .social-whatsapp .social-icon {
-            background: #25D366;
-            color: white;
-        }
-
-        .social-instagram .social-icon {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
-        }
-
-        .social-facebook .social-icon {
-            background: #1877F2;
-            color: white;
-        }
-
-        .social-link:hover .social-icon {
-            transform: scale(1.1);
-        }
-
-        .social-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            color: var(--negro-profundo);
-            font-weight: 600;
-        }
-
-        .social-handle {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: var(--gris-medio);
         }
 
         /* FOOTER */
@@ -625,19 +600,13 @@
             line-height: 1.8;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 3.5rem;
             }
 
             .section-title {
                 font-size: 2.5rem;
-            }
-
-            .historia-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
             }
 
             .mision-cards {
@@ -648,12 +617,42 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .galeria-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .impacto-grid {
+                grid-template-columns: 1fr;
             }
 
-            .ayudar-grid {
+            .valores-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .proceso-timeline::before {
+                display: none;
+            }
+
+            .proceso-step {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .proceso-step:nth-child(even) .step-content {
+                order: 1;
+            }
+
+            .proceso-step:nth-child(even) .step-visual {
+                order: 2;
+            }
+
+            .step-content {
+                text-align: left;
+                padding-right: 0;
+            }
+
+            .proceso-step:nth-child(even) .step-content {
+                padding-left: 0;
+            }
+
+            .step-dot {
+                display: none;
             }
 
             .nav-links {
@@ -662,7 +661,7 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 2.8rem;
                 letter-spacing: -2px;
             }
@@ -692,150 +691,199 @@
                 gap: 30px;
             }
 
-            .galeria-grid {
-                grid-template-columns: 1fr;
-            }
-
             section {
                 padding: 80px 20px;
             }
 
-            .historia-visual {
-                padding: 40px 30px;
+            .social-icons-top {
+                gap: 15px;
             }
 
-            .social-links {
-                flex-direction: column;
-                align-items: stretch;
+            .social-icon-link {
+                width: 50px;
+                height: 50px;
             }
 
-            .social-link {
-                min-width: auto;
+            .social-icon-link img {
+                width: 24px;
+                height: 24px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- NAVEGACIÓN -->
     <nav>
         <div class="nav-container">
             <div class="logo">GATITOXZ</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#historia">Historia</a></li>
                 <li><a href="#mision">Misión</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#ayudar">Ayudar</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#impacto">Impacto</a></li>
+                <li><a href="storyxz.html">Nuestra Historia</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="inicio">
+    <section class="hero-contacto" id="inicio">
+        <div class="social-icons-top">
+            <a href="https://wa.me/521234567890" target="_blank" rel="noopener" class="social-icon-link whatsapp">
+                <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+            <a href="https://instagram.com/gatitoxz" target="_blank" rel="noopener" class="social-icon-link instagram">
+                <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://facebook.com/gatitoxz" target="_blank" rel="noopener" class="social-icon-link facebook">
+                <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </a>
+        </div>
+
         <div class="hero-content">
             <p class="hero-pre-title">Fundación</p>
             <h1>GATITOXZ</h1>
-            <p class="hero-subtitle">Alimentando esperanza en las calles de Córdoba</p>
+            <p class="hero-subtitle">Alimentando esperanza, un plato a la vez</p>
             <p class="hero-description">
-                Una fundación joven comprometida con el bienestar de los animales callejeros en Córdoba, Veracruz. Cada día trabajamos para que ningún animal pase hambre en nuestras calles.
+                Somos una fundación joven dedicada exclusivamente a alimentar animales callejeros en Córdoba, Veracruz. Cada día llevamos comida a las calles para que ningún animal pase hambre.
             </p>
             <div class="cta-buttons">
-                <a href="#ayudar" class="btn btn-primary">Quiero Ayudar</a>
-                <a href="#historia" class="btn btn-secondary">Conocer Más</a>
+                <a href="storyxz.html" class="btn btn-secondary">Conoce Nuestra Historia</a>
             </div>
+            <div class="location-badge">Córdoba, Veracruz, México</div>
         </div>
     </section>
 
-    <!-- HISTORIA -->
-    <section class="historia" id="historia">
-        <div class="section-header">
-            <p class="section-pre-title">Nuestros Orígenes</p>
-            <h2 class="section-title">Historia</h2>
-            <p class="section-subtitle">De la pasión urbana al compromiso social</p>
-        </div>
-        
-        <div class="historia-grid">
-            <div class="historia-texto">
-                <p>
-                    Todo comenzó con <span class="historia-highlight">JPXZ</span>, una marca personal urbana que representa la cultura callejera y la autenticidad. De ahí nació <span class="historia-highlight">JP WATS</span>, mi línea de ropa que lleva el estilo urbano a otro nivel.
-                </p>
-                <p>
-                    Pero caminando por las calles de Córdoba, las mismas que inspiran mis diseños, me di cuenta de algo: los verdaderos habitantes de estas calles necesitaban ayuda. Los gatos y perros que sobreviven día a día, buscando comida y refugio.
-                </p>
-                <p>
-                    A mis 17 años, decidí que era momento de usar mi voz y mi plataforma para algo más grande. Así nació <span class="historia-highlight">GATITOXZ</span>, una fundación que conecta la energía urbana con la compasión social.
-                </p>
-                <p>
-                    No somos una gran organización con años de experiencia. Somos jóvenes que creemos que podemos hacer la diferencia, un animal a la vez.
-                </p>
-            </div>
-            
-            <div class="historia-visual">
-                <h3 style="font-family: 'Space Grotesk', sans-serif; color: var(--gris-medio); margin-bottom: 30px; text-align: center; font-weight: 500; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">
-                    La Evolución
-                </h3>
-                <div class="marca-chain">
-                    <span class="marca-item">JPXZ</span>
-                    <span class="arrow">→</span>
-                    <span class="marca-item">JP WATS</span>
-                    <span class="arrow">→</span>
-                    <span class="marca-item" style="color: var(--verde-bosque);">GATITOXZ</span>
-                </div>
-                <p style="margin-top: 40px; color: var(--gris-medio); text-align: center; line-height: 1.7;">
-                    Del streetwear al cuidado animal.<br>
-                    Mismo espíritu, mayor propósito.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- MISIÓN -->
     <section class="mision" id="mision">
         <div class="section-header">
-            <p class="section-pre-title">Qué Hacemos</p>
+            <p class="section-pre-title">Nuestro Propósito</p>
             <h2 class="section-title">Misión</h2>
-            <p class="section-subtitle">Tres pilares que guían nuestro trabajo diario</p>
+            <p class="section-subtitle">Un enfoque simple pero poderoso</p>
         </div>
         
+        <div class="mision-intro">
+            Nuestra misión es clara y directa: alimentar a los animales callejeros de Córdoba. No prometemos más de lo que podemos cumplir. Cada día, llevamos comida a las calles para asegurarnos de que los animales más vulnerables no pasen hambre.
+        </div>
+
         <div class="mision-cards">
             <div class="card">
                 <div class="card-number">01</div>
-                <h3>Alimentar</h3>
-                <p>Proporcionamos alimento diario a los animales callejeros de Córdoba, asegurándonos de que ninguno pase hambre.</p>
+                <h3>Alimentación Diaria</h3>
+                <p>Llevamos alimento de calidad a puntos estratégicos de la ciudad donde sabemos que hay animales necesitados.</p>
             </div>
             
             <div class="card">
                 <div class="card-number">02</div>
-                <h3>Cuidar</h3>
-                <p>Ofrecemos atención básica de salud y creamos puntos seguros donde los animales pueden descansar sin peligro.</p>
+                <h3>Rutas Establecidas</h3>
+                <p>Creamos recorridos regulares para mantener consistencia y que los animales sepan dónde encontrar su próxima comida.</p>
             </div>
             
             <div class="card">
                 <div class="card-number">03</div>
-                <h3>Concientizar</h3>
-                <p>Educamos a la comunidad sobre el cuidado responsable de mascotas y el respeto hacia los animales callejeros.</p>
+                <h3>Impacto Local</h3>
+                <p>Nos enfocamos en Córdoba, conocemos sus calles y sabemos exactamente dónde nuestra ayuda es más necesaria.</p>
             </div>
         </div>
     </section>
 
-    <!-- ESTADÍSTICAS -->
+    <section class="proceso" id="proceso">
+        <div class="section-header">
+            <p class="section-pre-title">Cómo Trabajamos</p>
+            <h2 class="section-title">Nuestro Proceso</h2>
+            <p class="section-subtitle">De la planificación a la acción en las calles</p>
+        </div>
+
+        <div class="proceso-timeline">
+            <div class="proceso-step">
+                <div class="step-content">
+                    <div class="step-number">PASO 01</div>
+                    <h3 class="step-title">Recolección</h3>
+                    <p class="step-description">Reunimos donaciones de alimento y organizamos nuestros recursos para las jornadas de alimentación.</p>
+                </div>
+                <div class="step-visual"></div>
+                <div class="step-dot"></div>
+            </div>
+
+            <div class="proceso-step">
+                <div class="step-content">
+                    <div class="step-number">PASO 02</div>
+                    <h3 class="step-title">Planificación</h3>
+                    <p class="step-description">Diseñamos rutas eficientes que cubran las zonas donde más animales necesitan alimentación.</p>
+                </div>
+                <div class="step-visual"></div>
+                <div class="step-dot"></div>
+            </div>
+
+            <div class="proceso-step">
+                <div class="step-content">
+                    <div class="step-number">PASO 03</div>
+                    <h3 class="step-title">Distribución</h3>
+                    <p class="step-description">Salimos a las calles para llevar el alimento directamente a los animales que lo necesitan.</p>
+                </div>
+                <div class="step-visual"></div>
+                <div class="step-dot"></div>
+            </div>
+
+            <div class="proceso-step">
+                <div class="step-content">
+                    <div class="step-number">PASO 04</div>
+                    <h3 class="step-title">Seguimiento</h3>
+                    <p class="step-description">Monitoreamos las zonas regularmente para asegurarnos de mantener una presencia consistente.</p>
+                </div>
+                <div class="step-visual"></div>
+                <div class="step-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impacto" id="impacto">
+        <div class="section-header">
+            <p class="section-pre-title">Lo Que Logramos</p>
+            <h2 class="section-title">Nuestro Impacto</h2>
+            <p class="section-subtitle">Pequeños pasos hacia un gran cambio</p>
+        </div>
+
+        <div class="impacto-grid">
+            <div class="impacto-card">
+                <div class="impacto-icon">●</div>
+                <h3 class="impacto-title">Presencia Constante</h3>
+                <p class="impacto-description">Mantenemos rutas regulares para que los animales puedan contar con nosotros.</p>
+            </div>
+
+            <div class="impacto-card">
+                <div class="impacto-icon">◆</div>
+                <h3 class="impacto-title">Crecimiento Orgánico</h3>
+                <p class="impacto-description">Cada día sumamos más personas que creen en nuestra causa y nos apoyan.</p>
+            </div>
+
+            <div class="impacto-card">
+                <div class="impacto-icon">▲</div>
+                <h3 class="impacto-title">Enfoque Local</h3>
+                <p class="impacto-description">Conocemos Córdoba y trabajamos donde realmente podemos hacer la diferencia.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="stats">
         <div class="section-header">
-            <p class="section-pre-title">Resultados</p>
-            <h2 class="section-title">Nuestro Impacto</h2>
-            <p class="section-subtitle">Números que cuentan historias de esperanza</p>
+            <p class="section-pre-title">Nuestros Inicios</p>
+            <h2 class="section-title">Estadísticas</h2>
+            <p class="section-subtitle">Estamos comenzando, pero con paso firme</p>
         </div>
-        
+
         <div class="stats-grid">
             <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Animales Alimentados</div>
+                <div class="stat-number">2025</div>
+                <div class="stat-label">Año de Fundación</div>
             </div>
             
             <div class="stat-item">
-                <div class="stat-number">15</div>
-                <div class="stat-label">Puntos de Alimentación</div>
+                <div class="stat-number">+</div>
+                <div class="stat-label">En Crecimiento</div>
             </div>
             
             <div class="stat-item">
@@ -845,134 +893,41 @@
             
             <div class="stat-item">
                 <div class="stat-number">1</div>
-                <div class="stat-label">Comunidad Unida</div>
+                <div class="stat-label">Ciudad, Gran Impacto</div>
             </div>
         </div>
     </section>
 
-    <!-- GALERÍA -->
-    <section class="galeria" id="galeria">
+    <section class="valores">
         <div class="section-header">
-            <p class="section-pre-title">Nuestro Trabajo</p>
-            <h2 class="section-title">Galería</h2>
-            <p class="section-subtitle">Momentos que capturan nuestra labor y el impacto que generamos</p>
+            <p class="section-pre-title">Nuestros Principios</p>
+            <h2 class="section-title">Valores</h2>
+            <p class="section-subtitle">Lo que nos define y nos impulsa cada día</p>
         </div>
-        
-        <div class="galeria-grid">
-            <div class="galeria-item">
-                <div class="galeria-placeholder">
-                    <div class="placeholder-icon">+</div>
-                    <span class="placeholder-text">Próximamente</span>
-                </div>
+
+        <div class="valores-grid">
+            <div class="valor-card">
+                <h3 class="valor-title">Transparencia</h3>
+                <p class="valor-description">Somos honestos sobre lo que hacemos y lo que podemos lograr. No prometemos milagros, prometemos acción constante.</p>
             </div>
-            <div class="galeria-item">
-                <div class="galeria-placeholder">
-                    <div class="placeholder-icon">+</div>
-                    <span class="placeholder-text">Próximamente</span>
-                </div>
+
+            <div class="valor-card">
+                <h3 class="valor-title">Autenticidad</h3>
+                <p class="valor-description">Nacimos de la cultura urbana y mantenemos esa esencia. Somos jóvenes haciendo cambio real en nuestras calles.</p>
             </div>
-            <div class="galeria-item">
-                <div class="galeria-placeholder">
-                    <div class="placeholder-icon">+</div>
-                    <span class="placeholder-text">Próximamente</span>
-                </div>
+
+            <div class="valor-card">
+                <h3 class="valor-title">Consistencia</h3>
+                <p class="valor-description">Preferimos acciones pequeñas pero constantes que grandes promesas. Cada día, un paso más hacia nuestro objetivo.</p>
             </div>
-            <div class="galeria-item">
-                <div class="galeria-placeholder">
-                    <div class="placeholder-icon">+</div>
-                    <span class="placeholder-text">Próximamente</span>
-                </div>
-            </div>
-            <div class="galeria-item">
-                <div class="galeria-placeholder">
-                    <div class="placeholder-icon">+</div>
-                    <span class="placeholder-text">Próximamente</span>
-                </div>
-            </div>
-            <div class="galeria-item">
-                <div class="galeria-placeholder">
-                    <div class="placeholder-icon">+</div>
-                    <span class="placeholder-text">Próximamente</span>
-                </div>
+
+            <div class="valor-card">
+                <h3 class="valor-title">Comunidad</h3>
+                <p class="valor-description">Creemos en el poder de la colaboración local. Juntos podemos hacer mucho más que solos.</p>
             </div>
         </div>
     </section>
 
-    <!-- CÓMO AYUDAR -->
-    <section class="ayudar" id="ayudar">
-        <div class="section-header">
-            <p class="section-pre-title">Involúcrate</p>
-            <h2 class="section-title">Cómo Ayudar</h2>
-            <p class="section-subtitle">Cada contribución suma, cada acción cuenta en nuestra misión</p>
-        </div>
-        
-        <div class="ayudar-grid">
-            <div class="ayudar-card">
-                <div class="ayudar-icon">$</div>
-                <h3>Dona</h3>
-                <p>Tu donación se convierte directamente en alimento y cuidado para los animales que más lo necesitan.</p>
-                <a href="#contacto" class="btn btn-primary">Hacer Donación</a>
-            </div>
-            
-            <div class="ayudar-card">
-                <div class="ayudar-icon">⟡</div>
-                <h3>Voluntariado</h3>
-                <p>Únete a nuestro equipo y ayúdanos en las jornadas de alimentación y cuidado animal.</p>
-                <a href="#contacto" class="btn btn-primary">Ser Voluntario</a>
-            </div>
-            
-            <div class="ayudar-card">
-                <div class="ayudar-icon">◐</div>
-                <h3>Dona Alimento</h3>
-                <p>¿Tienes croquetas extras? Cada bolsa de alimento marca la diferencia en la vida de estos animalitos.</p>
-                <a href="#contacto" class="btn btn-primary">Donar Alimento</a>
-            </div>
-            
-            <div class="ayudar-card">
-                <div class="ayudar-icon">◢</div>
-                <h3>Comparte</h3>
-                <p>Síguenos en redes sociales y ayúdanos a difundir nuestra misión. Entre más seamos, más ayudamos.</p>
-                <a href="#contacto" class="btn btn-primary">Seguir en Redes</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contacto" id="contacto">
-        <div class="section-header">
-            <p class="section-pre-title">Conecta con Nosotros</p>
-            <h2 class="section-title">Contacto</h2>
-            <p class="section-subtitle">Estamos aquí para escucharte y trabajar juntos</p>
-        </div>
-        
-        <div class="contacto-info">
-            <p class="contacto-location">
-                Córdoba, Veracruz, México
-            </p>
-            
-            <div class="social-links">
-                <a href="https://wa.me/521234567890" target="_blank" rel="noopener" class="social-link social-whatsapp">
-                    <div class="social-icon">W</div>
-                    <div class="social-name">WhatsApp</div>
-                    <div class="social-handle">Contáctanos</div>
-                </a>
-                
-                <a href="https://instagram.com/gatitoxz" target="_blank" rel="noopener" class="social-link social-instagram">
-                    <div class="social-icon">IG</div>
-                    <div class="social-name">Instagram</div>
-                    <div class="social-handle">@gatitoxz</div>
-                </a>
-                
-                <a href="https://facebook.com/gatitoxz" target="_blank" rel="noopener" class="social-link social-facebook">
-                    <div class="social-icon">F</div>
-                    <div class="social-name">Facebook</div>
-                    <div class="social-handle">Gatitoxz</div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">GATITOXZ</div>
@@ -985,13 +940,12 @@
             <div class="footer-divider"></div>
             <p class="footer-copy">
                 © 2025 GATITOXZ Fundación · Córdoba, Veracruz, México<br>
-                Hecho con dedicación para los que no tienen voz
+                Alimentando esperanza, un plato a la vez
             </p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1005,7 +959,6 @@
             });
         });
 
-        // Nav shadow on scroll
         let lastScroll = 0;
         const nav = document.querySelector('nav');
         
