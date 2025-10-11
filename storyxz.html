@@ -499,18 +499,23 @@
             line-height: 1.8;
         }
 
+        /* RESPONSIVE TABLET */
         @media (max-width: 1024px) {
             .hero-content h1 {
                 font-size: 3.5rem;
             }
 
             .section-title {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .origen-grid {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 60px;
+            }
+
+            .origen-visual {
+                padding: 50px 40px;
             }
 
             .timeline::before {
@@ -531,52 +536,317 @@
 
             .vision-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .fundador-brands {
                 flex-direction: column;
                 gap: 40px;
             }
+
+            section {
+                padding: 100px 30px;
+            }
+
+            .section-header {
+                margin-bottom: 60px;
+            }
         }
 
+        /* RESPONSIVE MÓVIL */
         @media (max-width: 768px) {
+            /* Navegación */
+            .nav-container {
+                padding: 18px 20px;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-back {
+                font-size: 0.85rem;
+                gap: 6px;
+            }
+
+            /* Hero */
+            .hero-story {
+                min-height: 85vh;
+                padding: 120px 20px 60px;
+            }
+
+            .hero-pre-title {
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+                margin-bottom: 15px;
+            }
+
             .hero-content h1 {
-                font-size: 2.8rem;
-                letter-spacing: -2px;
+                font-size: 2.5rem;
+                letter-spacing: -1.5px;
+                margin-bottom: 25px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+
+            /* Secciones generales */
+            section {
+                padding: 70px 20px;
+            }
+
+            .section-header {
+                margin-bottom: 50px;
+            }
+
+            .section-pre-title {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 12px;
             }
 
             .section-title {
                 font-size: 2rem;
+                letter-spacing: -1px;
+                margin-bottom: 18px;
             }
 
-            .nav-container {
-                padding: 20px;
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
             }
 
-            .logo {
-                font-size: 1.3rem;
+            /* Origen */
+            .origen-grid {
+                gap: 40px;
             }
 
-            section {
-                padding: 80px 20px;
+            .origen-texto {
+                font-size: 1rem;
+            }
+
+            .origen-texto p {
+                margin-bottom: 25px;
             }
 
             .origen-visual {
-                padding: 40px 30px;
-            }
-
-            .fundador-card {
-                padding: 40px 30px;
-            }
-
-            .fundador-quote {
-                font-size: 1.2rem;
-                padding: 30px;
+                padding: 40px 25px;
             }
 
             .marca-chain {
+                font-size: 1.3rem;
+                gap: 12px;
+                margin: 25px 0;
+            }
+
+            .arrow {
+                font-size: 1.5rem;
+            }
+
+            .origen-visual p {
+                font-size: 0.95rem;
+                margin-top: 30px;
+            }
+
+            /* Timeline */
+            .timeline {
+                padding-left: 0;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item {
+                margin-bottom: 50px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                padding-left: 50px;
+            }
+
+            .timeline-dot {
+                left: 15px;
+                width: 18px;
+                height: 18px;
+                border-width: 4px;
+            }
+
+            .timeline-year {
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+
+            .timeline-title {
                 font-size: 1.4rem;
-                gap: 15px;
+                margin-bottom: 12px;
+            }
+
+            .timeline-description {
+                font-size: 0.95rem;
+            }
+
+            /* Propósito */
+            .proposito-text {
+                font-size: 1.05rem;
+                line-height: 1.8;
+                margin-bottom: 35px;
+                padding: 0 10px;
+            }
+
+            .proposito-highlight {
+                font-size: 1.2rem;
+                margin-top: 40px;
+                padding: 0 10px;
+            }
+
+            /* Visión */
+            .vision-grid {
+                gap: 25px;
+            }
+
+            .vision-card {
+                padding: 40px 30px;
+            }
+
+            .vision-icon {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .vision-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .vision-card p {
+                font-size: 0.95rem;
+            }
+
+            /* Fundador */
+            .fundador-card {
+                padding: 40px 25px;
+            }
+
+            .fundador-intro {
+                font-size: 1rem;
+                margin-bottom: 35px;
+            }
+
+            .fundador-quote {
+                font-size: 1.15rem;
+                padding: 30px 25px;
+                margin: 35px 0;
+            }
+
+            .fundador-brands {
+                gap: 35px;
+                margin-top: 40px;
+                padding-top: 40px;
+            }
+
+            .brand-name {
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+            }
+
+            .brand-description {
+                font-size: 0.85rem;
+            }
+
+            /* CTA */
+            .cta-text {
+                font-size: 1.05rem;
+                margin-bottom: 35px;
+                padding: 0 10px;
+            }
+
+            .btn {
+                padding: 16px 35px;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 60px 20px 30px;
+            }
+
+            .footer-logo {
+                font-size: 1.6rem;
+                margin-bottom: 25px;
+            }
+
+            .footer-brands {
+                font-size: 0.85rem;
+                margin-bottom: 25px;
+                line-height: 1.6;
+            }
+
+            .footer-divider {
+                width: 50px;
+                margin: 30px auto;
+            }
+
+            .footer-copy {
+                font-size: 0.85rem;
+                line-height: 1.7;
+            }
+        }
+
+        /* RESPONSIVE MÓVIL PEQUEÑO */
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .origen-visual {
+                padding: 35px 20px;
+            }
+
+            .marca-chain {
+                font-size: 1.1rem;
+                gap: 10px;
+            }
+
+            .arrow {
+                font-size: 1.3rem;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                padding-left: 45px;
+            }
+
+            .timeline-year {
+                font-size: 1.5rem;
+            }
+
+            .timeline-title {
+                font-size: 1.2rem;
+            }
+
+            .fundador-card {
+                padding: 35px 20px;
+            }
+
+            .fundador-quote {
+                font-size: 1.05rem;
+                padding: 25px 20px;
+            }
+
+            .vision-card {
+                padding: 35px 25px;
             }
         }
     </style>
