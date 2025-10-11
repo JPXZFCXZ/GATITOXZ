@@ -600,29 +600,34 @@
             line-height: 1.8;
         }
 
+        /* RESPONSIVE TABLET */
         @media (max-width: 1024px) {
             .hero-content h1 {
                 font-size: 3.5rem;
             }
 
             .section-title {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .mision-cards {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
             }
 
             .impacto-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .valores-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .proceso-timeline::before {
@@ -657,46 +662,42 @@
 
             .nav-links {
                 gap: 25px;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 100px 30px;
+            }
+
+            .section-header {
+                margin-bottom: 60px;
             }
         }
 
+        /* RESPONSIVE MÓVIL */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.8rem;
-                letter-spacing: -2px;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
+            /* Navegación */
             .nav-container {
-                padding: 20px;
+                padding: 18px 20px;
             }
 
             .logo {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             .nav-links {
                 display: none;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            section {
-                padding: 80px 20px;
+            /* Hero */
+            .hero-contacto {
+                min-height: 90vh;
+                padding: 120px 20px 60px;
             }
 
             .social-icons-top {
-                gap: 15px;
+                gap: 12px;
+                margin-bottom: 50px;
             }
 
             .social-icon-link {
@@ -704,9 +705,248 @@
                 height: 50px;
             }
 
-            .social-icon-link img {
+            .social-icon-link svg {
                 width: 24px;
                 height: 24px;
+            }
+
+            .hero-pre-title {
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+                margin-bottom: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                letter-spacing: -1.5px;
+                margin-bottom: 25px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 40px;
+                padding: 0 10px;
+            }
+
+            .location-badge {
+                padding: 10px 25px;
+                font-size: 0.85rem;
+                margin-top: 30px;
+            }
+
+            .cta-buttons {
+                gap: 15px;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                padding: 16px 35px;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            /* Secciones generales */
+            section {
+                padding: 70px 20px;
+            }
+
+            .section-header {
+                margin-bottom: 50px;
+            }
+
+            .section-pre-title {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 12px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                letter-spacing: -1px;
+                margin-bottom: 18px;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            /* Misión */
+            .mision-intro {
+                font-size: 1rem;
+                margin-bottom: 50px;
+                padding: 0 10px;
+            }
+
+            .mision-cards {
+                gap: 25px;
+            }
+
+            .card {
+                padding: 40px 30px;
+            }
+
+            .card-number {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .card p {
+                font-size: 0.95rem;
+            }
+
+            /* Proceso */
+            .proceso-step {
+                margin-bottom: 50px;
+            }
+
+            .step-number {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .step-title {
+                font-size: 1.5rem;
+                margin-bottom: 12px;
+            }
+
+            .step-description {
+                font-size: 1rem;
+            }
+
+            /* Impacto */
+            .impacto-grid {
+                gap: 25px;
+            }
+
+            .impacto-card {
+                padding: 35px 25px;
+            }
+
+            .impacto-icon {
+                font-size: 2.5rem;
+                margin-bottom: 18px;
+            }
+
+            .impacto-title {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .impacto-description {
+                font-size: 0.95rem;
+            }
+
+            /* Estadísticas */
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .stat-item {
+                padding: 35px 20px;
+            }
+
+            .stat-number {
+                font-size: 3.5rem;
+                margin-bottom: 12px;
+            }
+
+            .stat-label {
+                font-size: 0.95rem;
+            }
+
+            /* Valores */
+            .valores-grid {
+                gap: 25px;
+            }
+
+            .valor-card {
+                padding: 35px 30px;
+            }
+
+            .valor-title {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+
+            .valor-description {
+                font-size: 1rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 60px 20px 30px;
+            }
+
+            .footer-logo {
+                font-size: 1.6rem;
+                margin-bottom: 25px;
+            }
+
+            .footer-brands {
+                font-size: 0.85rem;
+                margin-bottom: 25px;
+                line-height: 1.6;
+            }
+
+            .footer-divider {
+                width: 50px;
+                margin: 30px auto;
+            }
+
+            .footer-copy {
+                font-size: 0.85rem;
+                line-height: 1.7;
+            }
+        }
+
+        /* RESPONSIVE MÓVIL PEQUEÑO */
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .social-icons-top {
+                gap: 10px;
+            }
+
+            .social-icon-link {
+                width: 45px;
+                height: 45px;
+            }
+
+            .social-icon-link svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .card {
+                padding: 35px 25px;
+            }
+
+            .valor-card {
+                padding: 30px 25px;
+            }
+
+            .stat-number {
+                font-size: 3rem;
             }
         }
     </style>
