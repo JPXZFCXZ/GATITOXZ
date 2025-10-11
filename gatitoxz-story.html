@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia | GATITOXZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blanco-puro: #fafafa;
+            --verde-bosque: #2d5d4f;
+            --negro-profundo: #1a1a1a;
+            --terracota-suave: #d4a574;
+            --gris-claro: #e8e8e8;
+            --gris-medio: #666666;
+            --verde-suave: #8ba89a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--blanco-puro);
+            color: var(--negro-profundo);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gris-claro);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            color: var(--verde-bosque);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .nav-back {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--negro-profundo);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-back:hover {
+            color: var(--verde-bosque);
+        }
+
+        .hero-story {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 40px 80px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--blanco-puro) 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-pre-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--verde-bosque);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-content h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 5rem;
+            margin-bottom: 30px;
+            letter-spacing: -3px;
+            color: var(--negro-profundo);
+            line-height: 0.95;
+        }
+
+        .hero-subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--gris-medio);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        section {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-pre-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--verde-bosque);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            color: var(--negro-profundo);
+        }
+
+        .section-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            color: var(--gris-medio);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .origen {
+            background: white;
+        }
+
+        .origen-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .origen-texto {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--gris-medio);
+        }
+
+        .origen-texto p {
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: var(--verde-bosque);
+            font-weight: 600;
+        }
+
+        .origen-visual {
+            background: var(--blanco-puro);
+            padding: 60px;
+            border-radius: 8px;
+            border: 1px solid var(--gris-claro);
+        }
+
+        .marca-chain {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .arrow {
+            color: var(--verde-suave);
+            font-size: 2rem;
+        }
+
+        .marca-item {
+            color: var(--negro-profundo);
+        }
+
+        .evolucion {
+            background: var(--blanco-puro);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gris-claro);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+            padding-right: 60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            padding-left: 60px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--verde-bosque);
+            border: 5px solid var(--blanco-puro);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .timeline-year {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.5rem;
+            color: var(--verde-bosque);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .timeline-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--negro-profundo);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            font-size: 1.05rem;
+            color: var(--gris-medio);
+            line-height: 1.8;
+        }
+
+        .proposito {
+            background: white;
+        }
+
+        .proposito-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .proposito-text {
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--gris-medio);
+            margin-bottom: 50px;
+        }
+
+        .proposito-highlight {
+            font-size: 1.5rem;
+            color: var(--verde-bosque);
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 50px;
+        }
+
+        .vision {
+            background: var(--verde-bosque);
+            color: white;
+        }
+
+        .vision .section-pre-title,
+        .vision .section-title,
+        .vision .section-subtitle {
+            color: white;
+        }
+
+        .vision .section-subtitle {
+            opacity: 0.9;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .vision-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .vision-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .vision-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+
+        .vision-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .vision-card p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .fundador {
+            background: var(--blanco-puro);
+        }
+
+        .fundador-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fundador-card {
+            background: white;
+            padding: 60px;
+            border-radius: 8px;
+            border: 1px solid var(--gris-claro);
+        }
+
+        .fundador-intro {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--gris-medio);
+            margin-bottom: 40px;
+        }
+
+        .fundador-quote {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--negro-profundo);
+            font-weight: 500;
+            line-height: 1.7;
+            padding: 40px;
+            background: var(--blanco-puro);
+            border-left: 4px solid var(--verde-bosque);
+            margin: 40px 0;
+        }
+
+        .fundador-brands {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 50px;
+            border-top: 1px solid var(--gris-claro);
+        }
+
+        .brand-item {
+            text-align: center;
+        }
+
+        .brand-name {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.8rem;
+            color: var(--negro-profundo);
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .brand-description {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gris-medio);
+        }
+
+        .cta-section {
+            background: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            color: var(--gris-medio);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            background: var(--verde-bosque);
+            color: white;
+        }
+
+        .btn:hover {
+            background: var(--negro-profundo);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 93, 79, 0.3);
+        }
+
+        footer {
+            background: var(--negro-profundo);
+            padding: 80px 40px 40px;
+            color: white;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .footer-brands {
+            font-family: 'Space Grotesk', sans-serif;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .footer-brand {
+            color: var(--verde-suave);
+            font-weight: 600;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--verde-bosque);
+            margin: 40px auto;
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .origen-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 0;
+                padding-left: 80px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fundador-brands {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+                letter-spacing: -2px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 20px;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .origen-visual {
+                padding: 40px 30px;
+            }
+
+            .fundador-card {
+                padding: 40px 30px;
+            }
+
+            .fundador-quote {
+                font-size: 1.2rem;
+                padding: 30px;
+            }
+
+            .marca-chain {
+                font-size: 1.4rem;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GATITOXZ</a>
+            <a href="index.html" class="nav-back">
+                <span>←</span>
+                Volver al Inicio
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-story">
+        <div class="hero-content">
+            <p class="hero-pre-title">Nuestros Orígenes</p>
+            <h1>La Historia</h1>
+            <p class="hero-subtitle">De la cultura urbana al compromiso social</p>
+        </div>
+    </section>
+
+    <section class="origen">
+        <div class="section-header">
+            <p class="section-pre-title">El Comienzo</p>
+            <h2 class="section-title">Cómo Empezó Todo</h2>
+            <p class="section-subtitle">Un viaje desde el streetwear hasta las calles de Córdoba</p>
+        </div>
+        
+        <div class="origen-grid">
+            <div class="origen-texto">
+                <p>
+                    Mi nombre está detrás de <span class="highlight">JPXZ</span>, una marca que nació de mi amor por la cultura urbana, el streetwear y la autenticidad de las calles. Era mi forma de expresar quién soy y cómo veo el mundo.
+                </p>
+                <p>
+                    Con el tiempo, esa pasión creció y se transformó en <span class="highlight">JP WATS</span>, mi línea de ropa que lleva el estilo urbano a otro nivel. Diseños que cuentan historias, prendas que representan una actitud.
+                </p>
+                <p>
+                    Pero caminando por esas mismas calles que me inspiran, las que aparecen en mis diseños y definen mi estética, me di cuenta de algo importante: los verdaderos habitantes de estas calles, los gatos y perros que sobreviven día a día, necesitaban ayuda real.
+                </p>
+                <p>
+                    A mis 17 años, entendí que tenía una plataforma, una voz, y la capacidad de hacer algo más grande que ropa. Así nació <span class="highlight">GATITOXZ</span>.
+                </p>
+            </div>
+            
+            <div class="origen-visual">
+                <h3 style="font-family: 'Space Grotesk', sans-serif; color: var(--gris-medio); margin-bottom: 30px; text-align: center; font-weight: 500; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">
+                    La Evolución Natural
+                </h3>
+                <div class="marca-chain">
+                    <span class="marca-item">JPXZ</span>
+                    <span class="arrow">→</span>
+                    <span class="marca-item">JP WATS</span>
+                    <span class="arrow">→</span>
+                    <span class="marca-item" style="color: var(--verde-bosque);">GATITOXZ</span>
+                </div>
+                <p style="margin-top: 40px; color: var(--gris-medio); text-align: center; line-height: 1.7; font-size: 1.05rem;">
+                    Del diseño urbano al impacto social.<br>
+                    Mismo espíritu, mayor propósito.<br>
+                    Las calles que me inspiran, ahora las ayudo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="evolucion">
+        <div class="section-header">
+            <p class="section-pre-title">Línea de Tiempo</p>
+            <h2 class="section-title">Nuestra Evolución</h2>
+            <p class="section-subtitle">El camino que nos trajo hasta aquí</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">INICIO</div>
+                    <h3 class="timeline-title">JPXZ Nace</h3>
+                    <p class="timeline-description">
+                        Todo comenzó con una marca personal. JPXZ era mi forma de conectar con la cultura urbana y expresar mi visión del streetwear auténtico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">EXPANSIÓN</div>
+                    <h3 class="timeline-title">JP WATS Emerge</h3>
+                    <p class="timeline-description">
+                        La evolución natural. JP WATS se convierte en una línea completa de ropa urbana, llevando el diseño y la actitud de las calles a cada prenda.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">DESPERTAR</div>
+                    <h3 class="timeline-title">La Realización</h3>
+                    <p class="timeline-description">
+                        Caminando por las calles de Córdoba, veo a los verdaderos habitantes de estas calles. Los animales que luchan por sobrevivir. Decido que es momento de actuar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2025</div>
+                    <h3 class="timeline-title">GATITOXZ se Funda</h3>
+                    <p class="timeline-description">
+                        Nace la fundación. Con 17 años y una visión clara: usar mi plataforma para alimentar a los animales callejeros de Córdoba. Mismo espíritu urbano, nuevo propósito social.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">HOY</div>
+                    <h3 class="timeline-title">Construyendo el Futuro</h3>
+                    <p class="timeline-description">
+                        Estamos en nuestros primeros pasos, pero con paso firme. Cada día alimentamos más animales, sumamos más apoyo y construimos una comunidad comprometida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="proposito">
+        <div class="section-header">
+            <p class="section-pre-title">Por Qué Existimos</p>
+            <h2 class="section-title">El Propósito</h2>
+            <p class="section-subtitle">La razón detrás de cada acción</p>
+        </div>
+
+        <div class="proposito-content">
+            <p class="proposito-text">
+                Las calles me dieron inspiración para crear. Me dieron una identidad, un estilo, una voz. Era justo que les devolviera algo. Pero no con diseños, sino con acción real.
+            </p>
+            <p class="proposito-text">
+                Los animales callejeros no pidieron estar ahí. Merecen dignidad, merecen no pasar hambre. Y si tengo la capacidad de hacer algo al respecto, ¿por qué no hacerlo?
+            </p>
+            <p class="proposito-text">
+                GATITOXZ no es solo una fundación. Es la prueba de que la cultura urbana también puede ser compasión. De que los jóvenes podemos hacer cambio real. De que las calles merecen ser cuidadas tanto como nos inspiran.
+            </p>
+            <p class="proposito-highlight">
+                "Si las calles me dieron todo, es mi turno de devolverles algo"
+            </p>
+        </div>
+    </section>
+
+    <section class="vision">
+        <div class="section-header">
+            <p class="section-pre-title">Hacia Dónde Vamos</p>
+            <h2 class="section-title">Nuestra Visión</h2>
+            <p class="section-subtitle">Los sueños que nos impulsan cada día</p>
+        </div>
+
+        <div class="vision-grid">
+            <div class="vision-card">
+                <div class="vision-icon">◆</div>
+                <h3>Expandir el Alcance</h3>
+                <p>Llegar a más zonas de Córdoba, alimentar a más animales y crear una red de puntos de alimentación constante.</p>
+            </div>
+
+            <div class="vision-card">
+                <div class="vision-icon">●</div>
+                <h3>Construir Comunidad</h3>
+                <p>Inspirar a más jóvenes a unirse a la causa y demostrar que juntos podemos hacer la diferencia.</p>
+            </div>
+
+            <div class="vision-card">
+                <div class="vision-icon">▲</div>
+                <h3>Crear Impacto Duradero</h3>
+                <p>No solo alimentar hoy, sino construir un sistema sostenible que beneficie a los animales callejeros a largo plazo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fundador">
+        <div class="section-header">
+            <p class="section-pre-title">Detrás del Proyecto</p>
+            <h2 class="section-title">El Fundador</h2>
+            <p class="section-subtitle">Una persona, tres proyectos, un mismo corazón</p>
+        </div>
+
+        <div class="fundador-content">
+            <div class="fundador-card">
+                <p class="fundador-intro">
+                    Tengo 17 años y vivo en Córdoba, Veracruz. Soy diseñador, emprendedor y ahora, fundador de una causa social. No soy una gran corporación ni tengo años de experiencia en organizaciones. Pero tengo algo mejor: autenticidad y ganas reales de hacer la diferencia.
+                </p>
+
+                <div class="fundador-quote">
+                    "La cultura urbana me enseñó a ser auténtico. Las calles me enseñaron a ser observador. Los animales callejeros me enseñaron a ser compasivo. GATITOXZ es la unión de todo lo que soy."
+                </div>
+
+                <p class="fundador-intro">
+                    Mi camino no fue planificado. Empecé diseñando por pasión, creé marcas por amor al streetwear, y terminé fundando GATITOXZ porque las calles que tanto me dan merecen que les devuelva algo. Esto es solo el comienzo.
+                </p>
+
+                <div class="fundador-brands">
+                    <div class="brand-item">
+                        <div class="brand-name">JPXZ</div>
+                        <div class="brand-description">Marca Personal</div>
+                    </div>
+                    <div class="brand-item">
+                        <div class="brand-name">JP WATS</div>
+                        <div class="brand-description">Línea de Ropa</div>
+                    </div>
+                    <div class="brand-item">
+                        <div class="brand-name" style="color: var(--verde-bosque);">GATITOXZ</div>
+                        <div class="brand-description">Fundación Social</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="section-header">
+            <p class="section-pre-title">Únete a la Causa</p>
+            <h2 class="section-title">Sé Parte de la Historia</h2>
+            <p class="section-subtitle">Esta historia apenas comienza y necesita de más personas como tú</p>
+        </div>
+
+        <div class="cta-content">
+            <p class="cta-text">
+                Ahora que conoces nuestra historia, sabes que somos reales, auténticos y comprometidos. No prometemos milagros, prometemos trabajo constante. No somos perfectos, pero somos honestos. Y necesitamos tu ayuda para seguir creciendo.
+            </p>
+            <a href="index.html#inicio" class="btn">Conoce Cómo Ayudar</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">GATITOXZ</div>
+            <div class="footer-brands">
+                Parte del ecosistema 
+                <span class="footer-brand">JPXZ</span> × 
+                <span class="footer-brand">JP WATS</span> × 
+                <span class="footer-brand">GATITOXZ</span>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="footer-copy">
+                © 2025 GATITOXZ Fundación · Córdoba, Veracruz, México<br>
+                Alimentando esperanza, un plato a la vez
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                nav.style.boxShadow = 'none';
+            } else {
+                nav.style.boxShadow = '0 2px 15px rgba(0,0,0,0.08)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
