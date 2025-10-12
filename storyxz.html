@@ -32,6 +32,93 @@
             overflow-x: hidden;
         }
 
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        .animate-on-scroll.animated {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+        }
+
+        .animate-slide-left.animated {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+        }
+
+        .animate-slide-right.animated {
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        .animate-scale {
+            opacity: 0;
+        }
+
+        .animate-scale.animated {
+            animation: scaleIn 0.6s ease forwards;
+        }
+
         nav {
             position: fixed;
             top: 0;
@@ -40,6 +127,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--gris-claro);
+            transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -57,6 +145,11 @@
             color: var(--verde-bosque);
             letter-spacing: -0.5px;
             text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-back {
@@ -65,7 +158,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -73,6 +166,7 @@
 
         .nav-back:hover {
             color: var(--verde-bosque);
+            transform: translateX(-5px);
         }
 
         .hero-story {
@@ -83,10 +177,25 @@
             text-align: center;
             padding: 140px 40px 80px;
             background: linear-gradient(180deg, #ffffff 0%, var(--blanco-puro) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-story::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(45, 93, 79, 0.03) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
         }
 
         .hero-content {
             max-width: 900px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-pre-title {
@@ -97,6 +206,7 @@
             color: var(--verde-bosque);
             margin-bottom: 20px;
             font-weight: 600;
+            animation: fadeIn 1s ease;
         }
 
         .hero-content h1 {
@@ -106,6 +216,7 @@
             letter-spacing: -3px;
             color: var(--negro-profundo);
             line-height: 0.95;
+            animation: fadeInUp 1s ease 0.2s backwards;
         }
 
         .hero-subtitle {
@@ -114,6 +225,7 @@
             color: var(--gris-medio);
             margin-bottom: 40px;
             font-weight: 400;
+            animation: fadeInUp 1s ease 0.4s backwards;
         }
 
         section {
@@ -185,6 +297,12 @@
             padding: 60px;
             border-radius: 8px;
             border: 1px solid var(--gris-claro);
+            transition: all 0.4s ease;
+        }
+
+        .origen-visual:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
 
         .marca-chain {
@@ -202,10 +320,63 @@
         .arrow {
             color: var(--verde-suave);
             font-size: 2rem;
+            animation: float 2s ease-in-out infinite;
         }
 
         .marca-item {
             color: var(--negro-profundo);
+            transition: all 0.3s ease;
+        }
+
+        .marca-item:hover {
+            color: var(--verde-bosque);
+            transform: scale(1.1);
+        }
+
+        /* IMAGEN PLACEHOLDER */
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--gris-claro) 0%, var(--blanco-puro) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gris-medio);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            border: 2px dashed var(--gris-claro);
+            margin: 40px 0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .image-placeholder:hover::before {
+            left: 100%;
+        }
+
+        .image-placeholder:hover {
+            border-color: var(--verde-suave);
+            transform: scale(1.02);
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         .evolucion {
@@ -232,6 +403,11 @@
         .timeline-item {
             position: relative;
             margin-bottom: 80px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.02);
         }
 
         .timeline-item:nth-child(odd) .timeline-content {
@@ -255,6 +431,12 @@
             border-radius: 50%;
             transform: translateX(-50%);
             z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 20px rgba(45, 93, 79, 0.4);
         }
 
         .timeline-year {
@@ -290,10 +472,10 @@
         }
 
         .proposito-text {
-            font-size: 1.3rem;
-            line-height: 2;
+            font-size: 1.2rem;
+            line-height: 1.9;
             color: var(--gris-medio);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .proposito-highlight {
@@ -302,17 +484,86 @@
             font-weight: 600;
             font-family: 'Space Grotesk', sans-serif;
             margin-top: 50px;
+            padding: 40px;
+            background: var(--blanco-puro);
+            border-radius: 8px;
+            transition: all 0.4s ease;
+        }
+
+        .proposito-highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(45, 93, 79, 0.1);
+        }
+
+        .galeria-section {
+            background: var(--blanco-puro);
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .galeria-item {
+            aspect-ratio: 1;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gris-claro);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .galeria-item::after {
+            content: 'Tu Imagen Aquí';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--gris-medio);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        .galeria-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .vision {
             background: var(--verde-bosque);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
         }
 
         .vision .section-pre-title,
         .vision .section-title,
         .vision .section-subtitle {
             color: white;
+            position: relative;
+            z-index: 1;
         }
 
         .vision .section-subtitle {
@@ -324,6 +575,8 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-top: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .vision-card {
@@ -332,16 +585,24 @@
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
         }
 
         .vision-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
         }
 
         .vision-icon {
             font-size: 3rem;
             margin-bottom: 25px;
+            display: inline-block;
+            transition: all 0.4s ease;
+        }
+
+        .vision-card:hover .vision-icon {
+            transform: scale(1.2) rotate(10deg);
         }
 
         .vision-card h3 {
@@ -370,6 +631,11 @@
             padding: 60px;
             border-radius: 8px;
             border: 1px solid var(--gris-claro);
+            transition: all 0.4s ease;
+        }
+
+        .fundador-card:hover {
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
         }
 
         .fundador-intro {
@@ -381,7 +647,7 @@
 
         .fundador-quote {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--negro-profundo);
             font-weight: 500;
             line-height: 1.7;
@@ -389,6 +655,12 @@
             background: var(--blanco-puro);
             border-left: 4px solid var(--verde-bosque);
             margin: 40px 0;
+            transition: all 0.4s ease;
+        }
+
+        .fundador-quote:hover {
+            border-left-width: 8px;
+            padding-left: 44px;
         }
 
         .fundador-brands {
@@ -402,6 +674,12 @@
 
         .brand-item {
             text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-5px);
         }
 
         .brand-name {
@@ -447,11 +725,29 @@
             display: inline-block;
             background: var(--verde-bosque);
             color: white;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn:hover {
             background: var(--negro-profundo);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(45, 93, 79, 0.3);
         }
 
@@ -472,6 +768,13 @@
             font-size: 2rem;
             margin-bottom: 30px;
             letter-spacing: -1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-logo:hover {
+            color: var(--verde-suave);
+            transform: scale(1.05);
         }
 
         .footer-brands {
@@ -484,6 +787,11 @@
         .footer-brand {
             color: var(--verde-suave);
             font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer-brand:hover {
+            color: white;
         }
 
         .footer-divider {
@@ -491,6 +799,11 @@
             height: 2px;
             background: var(--verde-bosque);
             margin: 40px auto;
+            transition: all 0.3s ease;
+        }
+
+        .footer-content:hover .footer-divider {
+            width: 100px;
         }
 
         .footer-copy {
@@ -544,6 +857,10 @@
                 gap: 40px;
             }
 
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             section {
                 padding: 100px 30px;
             }
@@ -555,7 +872,6 @@
 
         /* RESPONSIVE MÓVIL */
         @media (max-width: 768px) {
-            /* Navegación */
             .nav-container {
                 padding: 18px 20px;
                 flex-wrap: wrap;
@@ -571,7 +887,6 @@
                 gap: 6px;
             }
 
-            /* Hero */
             .hero-story {
                 min-height: 85vh;
                 padding: 120px 20px 60px;
@@ -594,7 +909,6 @@
                 margin-bottom: 30px;
             }
 
-            /* Secciones generales */
             section {
                 padding: 70px 20px;
             }
@@ -620,7 +934,6 @@
                 padding: 0 10px;
             }
 
-            /* Origen */
             .origen-grid {
                 gap: 40px;
             }
@@ -647,12 +960,11 @@
                 font-size: 1.5rem;
             }
 
-            .origen-visual p {
-                font-size: 0.95rem;
-                margin-top: 30px;
+            .image-placeholder {
+                height: 250px;
+                font-size: 0.9rem;
             }
 
-            /* Timeline */
             .timeline {
                 padding-left: 0;
             }
@@ -691,7 +1003,6 @@
                 font-size: 0.95rem;
             }
 
-            /* Propósito */
             .proposito-text {
                 font-size: 1.05rem;
                 line-height: 1.8;
@@ -702,10 +1013,14 @@
             .proposito-highlight {
                 font-size: 1.2rem;
                 margin-top: 40px;
-                padding: 0 10px;
+                padding: 30px 20px;
             }
 
-            /* Visión */
+            .galeria-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
             .vision-grid {
                 gap: 25px;
             }
@@ -728,7 +1043,6 @@
                 font-size: 0.95rem;
             }
 
-            /* Fundador */
             .fundador-card {
                 padding: 40px 25px;
             }
@@ -759,7 +1073,6 @@
                 font-size: 0.85rem;
             }
 
-            /* CTA */
             .cta-text {
                 font-size: 1.05rem;
                 margin-bottom: 35px;
@@ -773,7 +1086,6 @@
                 max-width: 300px;
             }
 
-            /* Footer */
             footer {
                 padding: 60px 20px 30px;
             }
@@ -871,31 +1183,31 @@
     </section>
 
     <section class="origen">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
             <p class="section-pre-title">El Comienzo</p>
-            <h2 class="section-title">Cómo Empezó Todo</h2>
-            <p class="section-subtitle">Un viaje desde el streetwear hasta las calles de Córdoba</p>
+            <h2 class="section-title">El Día Que Todo Cambió</h2>
+            <p class="section-subtitle">Un encuentro que transformó mi perspectiva de las calles</p>
         </div>
         
         <div class="origen-grid">
-            <div class="origen-texto">
+            <div class="origen-texto animate-slide-left">
                 <p>
-                    Mi nombre está detrás de <span class="highlight">JPXZ</span>, una marca que nació de mi amor por la cultura urbana, el streetwear y la autenticidad de las calles. Era mi forma de expresar quién soy y cómo veo el mundo.
+                    Caminaba por las calles de Córdoba buscando inspiración para mis diseños de <span class="highlight">JPXZ</span> y <span class="highlight">JP WATS</span>. La textura de las paredes, los grafitis, la vida urbana... todo eso alimentaba mi creatividad.
                 </p>
                 <p>
-                    Con el tiempo, esa pasión creció y se transformó en <span class="highlight">JP WATS</span>, mi línea de ropa que lleva el estilo urbano a otro nivel. Diseños que cuentan historias, prendas que representan una actitud.
+                    Entonces vi una gata delgada buscando comida en un bote de basura. <span class="highlight">Ese momento cambió mi forma de ver las calles.</span>
                 </p>
                 <p>
-                    Pero caminando por esas mismas calles que me inspiran, las que aparecen en mis diseños y definen mi estética, me di cuenta de algo importante: los verdaderos habitantes de estas calles, los gatos y perros que sobreviven día a día, necesitaban ayuda real.
+                    Me quedé pensando: estas calles me dan todo. Me inspiran, me definen. Pero ¿qué les estoy devolviendo? Cientos de animales sobreviven en las mismas calles que yo uso en mis diseños.
                 </p>
                 <p>
-                    A mis 17 años, entendí que tenía una plataforma, una voz, y la capacidad de hacer algo más grande que ropa. Así nació <span class="highlight">GATITOXZ</span>.
+                    Tenía 17 años, una pequeña plataforma, y una decisión que tomar. Así nació <span class="highlight">GATITOXZ</span>.
                 </p>
             </div>
             
-            <div class="origen-visual">
+            <div class="origen-visual animate-slide-right">
                 <h3 style="font-family: 'Space Grotesk', sans-serif; color: var(--gris-medio); margin-bottom: 30px; text-align: center; font-weight: 500; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">
-                    La Evolución Natural
+                    De la Inspiración a la Acción
                 </h3>
                 <div class="marca-chain">
                     <span class="marca-item">JPXZ</span>
@@ -905,23 +1217,28 @@
                     <span class="marca-item" style="color: var(--verde-bosque);">GATITOXZ</span>
                 </div>
                 <p style="margin-top: 40px; color: var(--gris-medio); text-align: center; line-height: 1.7; font-size: 1.05rem;">
-                    Del diseño urbano al impacto social.<br>
-                    Mismo espíritu, mayor propósito.<br>
-                    Las calles que me inspiran, ahora las ayudo.
+                    Las calles me dieron una voz.<br>
+                    Era hora de usarla para quienes no tienen una.<br><br>
+                    <span style="color: var(--verde-bosque); font-weight: 600;">Cada plato de comida es mi forma de agradecer a las calles.</span>
                 </p>
             </div>
+        </div>
+
+        <!-- Espacio para tu imagen 1 -->
+        <div class="image-placeholder animate-on-scroll" style="margin-top: 80px;">
+            <div>📸 Imagen 1: El momento que lo cambió todo</div>
         </div>
     </section>
 
     <section class="evolucion">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
             <p class="section-pre-title">Línea de Tiempo</p>
             <h2 class="section-title">Nuestra Evolución</h2>
             <p class="section-subtitle">El camino que nos trajo hasta aquí</p>
         </div>
 
         <div class="timeline">
-            <div class="timeline-item">
+            <div class="timeline-item animate-on-scroll">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">INICIO</div>
@@ -932,136 +1249,181 @@
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item animate-on-scroll">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">EXPANSIÓN</div>
                     <h3 class="timeline-title">JP WATS Emerge</h3>
                     <p class="timeline-description">
-                        La evolución natural. JP WATS se convierte en una línea completa de ropa urbana, llevando el diseño y la actitud de las calles a cada prenda.
+                        La evolución natural. JP WATS se convierte en una línea completa de ropa urbana, llevando el diseño de las calles a cada prenda.
                     </p>
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item animate-on-scroll">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">DESPERTAR</div>
-                    <h3 class="timeline-title">La Realización</h3>
+                    <h3 class="timeline-title">El Encuentro</h3>
                     <p class="timeline-description">
-                        Caminando por las calles de Córdoba, veo a los verdaderos habitantes de estas calles. Los animales que luchan por sobrevivir. Decido que es momento de actuar.
+                        Una gata frágil buscando comida. Una mirada que lo cambió todo. Entendí que no podía seguir solo tomando de las calles sin devolver nada.
                     </p>
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item animate-on-scroll">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">2025</div>
                     <h3 class="timeline-title">GATITOXZ se Funda</h3>
                     <p class="timeline-description">
-                        Nace la fundación. Con 17 años y una visión clara: usar mi plataforma para alimentar a los animales callejeros de Córdoba. Mismo espíritu urbano, nuevo propósito social.
+                        Nace la fundación. Con 17 años y una visión clara: usar mi plataforma para alimentar a los animales callejeros de Córdoba.
                     </p>
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item animate-on-scroll">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">HOY</div>
                     <h3 class="timeline-title">Construyendo el Futuro</h3>
                     <p class="timeline-description">
-                        Estamos en nuestros primeros pasos, pero con paso firme. Cada día alimentamos más animales, sumamos más apoyo y construimos una comunidad comprometida.
+                        Estamos en nuestros primeros pasos, pero con paso firme. Cada día alimentamos más animales y construimos una comunidad comprometida.
                     </p>
                 </div>
             </div>
         </div>
+
+        <!-- Espacio para tu imagen 2 -->
+        <div class="image-placeholder animate-on-scroll" style="margin-top: 80px;">
+            <div>📸 Imagen 2: Nuestro camino hasta hoy</div>
+        </div>
     </section>
 
     <section class="proposito">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
             <p class="section-pre-title">Por Qué Existimos</p>
             <h2 class="section-title">El Propósito</h2>
             <p class="section-subtitle">La razón detrás de cada acción</p>
         </div>
 
         <div class="proposito-content">
-            <p class="proposito-text">
-                Las calles me dieron inspiración para crear. Me dieron una identidad, un estilo, una voz. Era justo que les devolviera algo. Pero no con diseños, sino con acción real.
+            <p class="proposito-text animate-on-scroll">
+                Empecé GATITOXZ porque las calles me dieron mi identidad. Me enseñaron a ver belleza en lo auténtico. Pero no puedo romantizar las calles si ignoro a quienes las habitan.
             </p>
-            <p class="proposito-text">
-                Los animales callejeros no pidieron estar ahí. Merecen dignidad, merecen no pasar hambre. Y si tengo la capacidad de hacer algo al respecto, ¿por qué no hacerlo?
+            <p class="proposito-text animate-on-scroll">
+                Cuando le pones comida a un animal callejero, por primera vez en mucho tiempo, puede relajarse. <span class="highlight">No tiene que pelear por sobrevivir ese día.</span> Puede descansar. Y eso lo vale todo.
             </p>
-            <p class="proposito-text">
-                GATITOXZ no es solo una fundación. Es la prueba de que la cultura urbana también puede ser compasión. De que los jóvenes podemos hacer cambio real. De que las calles merecen ser cuidadas tanto como nos inspiran.
-            </p>
-            <p class="proposito-highlight">
-                "Si las calles me dieron todo, es mi turno de devolverles algo"
-            </p>
+            <div class="proposito-highlight animate-scale">
+                "Si vas a amar las calles, ama TODO de ellas."
+            </div>
+        </div>
+
+        <!-- Espacio para tu imagen 3 -->
+        <div class="image-placeholder animate-on-scroll" style="margin-top: 60px;">
+            <div>📸 Imagen 3: El propósito en acción</div>
+        </div>
+    </section>
+
+    <section class="galeria-section">
+        <div class="section-header animate-on-scroll">
+            <p class="section-pre-title">En Imágenes</p>
+            <h2 class="section-title">Nuestro Trabajo</h2>
+            <p class="section-subtitle">Momentos que definen lo que hacemos</p>
+        </div>
+
+        <div class="galeria-grid">
+            <div class="galeria-item animate-on-scroll">
+                <!-- Aquí pondrás tu imagen -->
+            </div>
+            <div class="galeria-item animate-on-scroll">
+                <!-- Aquí pondrás tu imagen -->
+            </div>
+            <div class="galeria-item animate-on-scroll">
+                <!-- Aquí pondrás tu imagen -->
+            </div>
+            <div class="galeria-item animate-on-scroll">
+                <!-- Aquí pondrás tu imagen -->
+            </div>
+            <div class="galeria-item animate-on-scroll">
+                <!-- Aquí pondrás tu imagen -->
+            </div>
+            <div class="galeria-item animate-on-scroll">
+                <!-- Aquí pondrás tu imagen -->
+            </div>
         </div>
     </section>
 
     <section class="vision">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
             <p class="section-pre-title">Hacia Dónde Vamos</p>
             <h2 class="section-title">Nuestra Visión</h2>
             <p class="section-subtitle">Los sueños que nos impulsan cada día</p>
         </div>
 
         <div class="vision-grid">
-            <div class="vision-card">
+            <div class="vision-card animate-on-scroll">
                 <div class="vision-icon">◆</div>
                 <h3>Expandir el Alcance</h3>
                 <p>Llegar a más zonas de Córdoba, alimentar a más animales y crear una red de puntos de alimentación constante.</p>
             </div>
 
-            <div class="vision-card">
+            <div class="vision-card animate-on-scroll">
                 <div class="vision-icon">●</div>
                 <h3>Construir Comunidad</h3>
                 <p>Inspirar a más jóvenes a unirse a la causa y demostrar que juntos podemos hacer la diferencia.</p>
             </div>
 
-            <div class="vision-card">
+            <div class="vision-card animate-on-scroll">
                 <div class="vision-icon">▲</div>
                 <h3>Crear Impacto Duradero</h3>
-                <p>No solo alimentar hoy, sino construir un sistema sostenible que beneficie a los animales callejeros a largo plazo.</p>
+                <p>Construir un sistema sostenible que beneficie a los animales callejeros a largo plazo.</p>
             </div>
         </div>
     </section>
 
     <section class="fundador">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
             <p class="section-pre-title">Detrás del Proyecto</p>
             <h2 class="section-title">El Fundador</h2>
             <p class="section-subtitle">Una persona, tres proyectos, un mismo corazón</p>
         </div>
 
         <div class="fundador-content">
-            <div class="fundador-card">
+            <div class="fundador-card animate-scale">
                 <p class="fundador-intro">
-                    Tengo 17 años y vivo en Córdoba, Veracruz. Soy diseñador, emprendedor y ahora, fundador de una causa social. No soy una gran corporación ni tengo años de experiencia en organizaciones. Pero tengo algo mejor: autenticidad y ganas reales de hacer la diferencia.
+                    Tengo 17 años. No soy una gran corporación. Pero tengo algo importante: <span class="highlight">la certeza de que una persona SÍ puede hacer la diferencia.</span>
                 </p>
 
                 <div class="fundador-quote">
-                    "La cultura urbana me enseñó a ser auténtico. Las calles me enseñaron a ser observador. Los animales callejeros me enseñaron a ser compasivo. GATITOXZ es la unión de todo lo que soy."
+                    "Soy diseñador porque amo crear. Soy emprendedor porque creo en mis ideas. Y fundé GATITOXZ porque no puedo dormir tranquilo sabiendo que puedo ayudar y no lo hago."
                 </div>
 
                 <p class="fundador-intro">
-                    Mi camino no fue planificado. Empecé diseñando por pasión, creé marcas por amor al streetwear, y terminé fundando GATITOXZ porque las calles que tanto me dan merecen que les devuelva algo. Esto es solo el comienzo.
+                    A veces me siento abrumado. A veces pienso que soy demasiado pequeño para este problema. Pero aunque solo ayude a diez animales, <strong style="color: var(--verde-bosque);">para esos diez animales, soy todo su mundo.</strong>
+                </p>
+
+                <!-- Espacio para tu imagen 4 -->
+                <div class="image-placeholder" style="margin: 40px 0;">
+                    <div>📸 Imagen 4: El fundador en acción</div>
+                </div>
+
+                <p class="fundador-intro">
+                    Te prometo <span class="highlight">autenticidad, transparencia y trabajo constante.</span> Cada peso que nos apoyen va directo a comida. No voy a parar hasta que esto sea más grande que yo.
                 </p>
 
                 <div class="fundador-brands">
                     <div class="brand-item">
                         <div class="brand-name">JPXZ</div>
-                        <div class="brand-description">Marca Personal</div>
+                        <div class="brand-description">Donde empezó mi voz</div>
                     </div>
                     <div class="brand-item">
                         <div class="brand-name">JP WATS</div>
-                        <div class="brand-description">Línea de Ropa</div>
+                        <div class="brand-description">Donde crecí mi visión</div>
                     </div>
                     <div class="brand-item">
                         <div class="brand-name" style="color: var(--verde-bosque);">GATITOXZ</div>
-                        <div class="brand-description">Fundación Social</div>
+                        <div class="brand-description">Donde encontré mi propósito</div>
                     </div>
                 </div>
             </div>
@@ -1069,17 +1431,26 @@
     </section>
 
     <section class="cta-section">
-        <div class="section-header">
-            <p class="section-pre-title">Únete a la Causa</p>
-            <h2 class="section-title">Sé Parte de la Historia</h2>
-            <p class="section-subtitle">Esta historia apenas comienza y necesita de más personas como tú</p>
+        <div class="section-header animate-on-scroll">
+            <p class="section-pre-title">Este Es Tu Momento</p>
+            <h2 class="section-title">Únete al Cambio</h2>
+            <p class="section-subtitle">No necesitas ser rico, solo tener corazón</p>
         </div>
 
         <div class="cta-content">
-            <p class="cta-text">
-                Ahora que conoces nuestra historia, sabes que somos reales, auténticos y comprometidos. No prometemos milagros, prometemos trabajo constante. No somos perfectos, pero somos honestos. Y necesitamos tu ayuda para seguir creciendo.
+            <p class="cta-text animate-on-scroll">
+                Imagina que un animal que hoy se acuesta con hambre, mañana puede descansar tranquilo. <span class="highlight">Gracias a ti.</span> Tu apoyo se transforma directamente en comida.
             </p>
-            <a href="index.html#inicio" class="btn">Conoce Cómo Ayudar</a>
+            <p class="cta-text animate-on-scroll">
+                Ahora conoces mi historia. Sabes que soy real, que esto viene del corazón. Solo un chico de 17 años que decidió actuar.
+            </p>
+            <p class="cta-text animate-on-scroll">
+                Dame la oportunidad de demostrarte que cada peso, cada compartida, cada gesto de apoyo se transforma en platos de comida. <strong>Sé parte de esta historia que apenas comienza.</strong>
+            </p>
+            <a href="index.html#inicio" class="btn animate-scale">Quiero Ayudar Ahora</a>
+            <p style="margin-top: 30px; color: var(--gris-medio); font-size: 0.95rem; font-style: italic;" class="animate-on-scroll">
+                Cada acción cuenta. Tú importas.
+            </p>
         </div>
     </section>
 
@@ -1101,6 +1472,7 @@
     </footer>
 
     <script>
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1114,6 +1486,7 @@
             });
         });
 
+        // Nav shadow on scroll
         let lastScroll = 0;
         const nav = document.querySelector('nav');
         
@@ -1127,6 +1500,36 @@
             }
             
             lastScroll = currentScroll;
+        });
+
+        // Animaciones on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos los elementos con clase de animación
+        document.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Hover effect para las tarjetas
+        document.querySelectorAll('.vision-card, .galeria-item, .timeline-item').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = this.classList.contains('timeline-item') ? 'scale(1.02)' : 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
     </script>
 </body>
