@@ -79,11 +79,15 @@
             color: var(--negro-profundo);
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: url('huellitaxz.png'), auto;
+            cursor: url('huellitaxz.png') 12 12, auto;
         }
 
-        a, button, .btn {
-            cursor: url('huellitaxz.png'), pointer;
+        * {
+            cursor: url('huellitaxz.png') 12 12, auto;
+        }
+
+        a, button, .btn, .card, .nav-links a, .social-icon-link {
+            cursor: url('huellitaxz.png') 12 12, pointer;
         }
 
         .paw-print {
@@ -1385,6 +1389,49 @@
         document.querySelectorAll('.card, .galeria-item, .impacto-card, .stat-item, .valor-card').forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
         });
+
+        // Sistema de huellas en móvil
+        if (window.innerWidth <= 768) {
+            document.addEventListener('click', function(e) {
+                const paw = document.createElement('div');
+                paw.className = 'paw-print';
+                paw.style.left = e.clientX + 'px';
+                paw.style.top = e.clientY + 'px';
+                
+                const img = document.createElement('img');
+                img.src = 'huellitaxz.png';
+                img.alt = 'Huella';
+                paw.appendChild(img);
+                
+                document.body.appendChild(paw);
+                
+                setTimeout(() => {
+                    paw.remove();
+                }, 1000);
+            });
+
+            // También para touch events
+            document.addEventListener('touchstart', function(e) {
+                if (e.touches.length > 0) {
+                    const touch = e.touches[0];
+                    const paw = document.createElement('div');
+                    paw.className = 'paw-print';
+                    paw.style.left = touch.clientX + 'px';
+                    paw.style.top = touch.clientY + 'px';
+                    
+                    const img = document.createElement('img');
+                    img.src = 'huellitaxz.png';
+                    img.alt = 'Huella';
+                    paw.appendChild(img);
+                    
+                    document.body.appendChild(paw);
+                    
+                    setTimeout(() => {
+                        paw.remove();
+                    }, 1000);
+                }
+            });
+        }
     </script>
 </body>
 </html>
